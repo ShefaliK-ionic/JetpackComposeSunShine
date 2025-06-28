@@ -15,27 +15,23 @@ class MainActivity : ComponentActivity() {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
 
-                    Greet("Test")
+                    ColumnFun("Test")
 
             }
         }
     }
 }
 
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//        text = "Hello $name!",
-//        modifier = modifier
-//    )
-//}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     JetpackComposeSunshineTheme {
+       //Row function
         rowFun()
-        //Greet("")
+        spaceHorizontally()
+        //Coumn function
+//        ColumnFun("")
 //        spacevertically()
     }
 }

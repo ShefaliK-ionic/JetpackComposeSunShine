@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun Greet(s: String) {
+fun ColumnFun(s: String) {
 
 // Text(text = "Hello $s welcome", color = Color.Green)
 // Text(text = "Hello $s welcome", color = Color.Red, fontSize = 5.sp)
