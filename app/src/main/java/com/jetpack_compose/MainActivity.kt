@@ -3,6 +3,7 @@ package com.jetpack_compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
@@ -15,7 +16,8 @@ class MainActivity : ComponentActivity() {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
 
-                    ColumnFun("Test")
+//                    ColumnFun("Test")
+                rememberState()
 
             }
         }
@@ -27,9 +29,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     JetpackComposeSunshineTheme {
+
+
+        rememberState()
+
+//        horizontalList()
+//        lazyColumn()
+
+
        //Row function
-        rowFun()
-        spaceHorizontally()
+//        rowFun()
+//        spaceHorizontally()
+
         //Coumn function
 //        ColumnFun("")
 //        spacevertically()
