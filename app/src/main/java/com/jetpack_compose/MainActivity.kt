@@ -6,6 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.jetpack_compose.navigation_drawer.NavDrawer
+import com.jetpack_compose.screens.WelcomeScreen
+import com.jetpack_compose.screens.splashFun
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,10 +18,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
-
+NavDrawer()
 //                    ColumnFun("Test")
-                rememberState()
-
+//                rememberState()
+//     ToggleExample()
             }
         }
     }
@@ -29,9 +32,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     JetpackComposeSunshineTheme {
-
-
-        rememberState()
+        WelcomeScreen()
+//splashFun()
+//ToggleExample()
+//        rememberSt/ate()
 
 //        horizontalList()
 //        lazyColumn()
