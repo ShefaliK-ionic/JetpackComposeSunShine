@@ -27,12 +27,13 @@ fun myCounterView(modifier: Modifier = Modifier,myViewModel: MyViewModel = MyVie
             Text(text = "Add count")
         }
         val textValue = myViewModel.counter//normal variable
-        val textValueStr  by myViewModel.text.observeAsState("")
+//        val textValueStr  by myViewModel.text.observeAsState("")
 //        val textValue by myViewModel.text.observeAsState("")
 
         val textValueState = myViewModel.uiState.collectAsState()//state data
 
-        Text(text = "My total bucket list size $textValue $textValueStr $textValueState")
+//        Text(text = "My total bucket list size $textValue $textValueStr $textValueState")
+        Text(text = "My total bucket list size $textValue  $textValueState")
 
 
     }

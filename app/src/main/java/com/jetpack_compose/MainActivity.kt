@@ -10,7 +10,9 @@ import com.jetpack_compose.bottom_navigation.BottomNav
 import com.jetpack_compose.navigation_drawer.NavDrawer
 import com.jetpack_compose.screens.WelcomeScreen
 import com.jetpack_compose.screens.splashFun
+import com.jetpack_compose.typesafe_navigation.typeSafeNavigate
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
+import kotlinx.serialization.Serializable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +22,8 @@ class MainActivity : ComponentActivity() {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
 //NavDrawer()
-                BottomNav()
+                typeSafeNavigate()
+//                BottomNav()
 
 //                    ColumnFun("Test")
 //                rememberState()
