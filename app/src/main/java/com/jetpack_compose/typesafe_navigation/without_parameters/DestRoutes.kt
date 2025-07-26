@@ -1,4 +1,4 @@
-package com.jetpack_compose.typesafe_navigation
+package com.jetpack_compose.typesafe_navigation.without_parameters
 
 import kotlinx.serialization.Serializable
 

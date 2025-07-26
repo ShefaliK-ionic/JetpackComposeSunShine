@@ -1,4 +1,4 @@
-package com.jetpack_compose.typesafe_navigation
+package com.jetpack_compose.typesafe_navigation.with_parameters
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -10,14 +10,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
-//
 @Composable
-fun ScreenA_UI(modifier: Modifier = Modifier,onclick:()-> Unit) {
+fun ScreenC_UI(modifier: Modifier = Modifier,onclick:()-> Unit) {
 
     Box(modifier= Modifier.fillMaxSize().background(color = Color.Yellow), contentAlignment = Alignment.Center){
 
         Button(onClick = onclick) {
-            Text(text = "Click from A")
+            Text(text = "Click from C")
         }
     }
 

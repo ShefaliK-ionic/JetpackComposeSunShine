@@ -3,16 +3,12 @@ package com.jetpack_compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.jetpack_compose.bottom_navigation.BottomNav
-import com.jetpack_compose.navigation_drawer.NavDrawer
 import com.jetpack_compose.screens.WelcomeScreen
-import com.jetpack_compose.screens.splashFun
-import com.jetpack_compose.typesafe_navigation.typeSafeNavigate
+import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithParameters
+import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithoutParameters
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
-import kotlinx.serialization.Serializable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +18,8 @@ class MainActivity : ComponentActivity() {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
 //NavDrawer()
-                typeSafeNavigate()
+//                typeSafeNavigateWithoutParameters()
+                typeSafeNavigateWithParameters()
 //                BottomNav()
 
 //                    ColumnFun("Test")
