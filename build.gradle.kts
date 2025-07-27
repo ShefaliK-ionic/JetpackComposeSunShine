@@ -6,4 +6,5 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.kotlinPluginSerialization) apply false
     alias(libs.plugins.composeCompiler) apply false
+    alias(libs.plugins.kotlinParcelize) apply false
 }

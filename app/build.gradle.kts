@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinPluginSerialization)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinParcelize)
+    id("kotlin-parcelize")
 //    kotlin("jvm") version "2.2.0"
 
 }

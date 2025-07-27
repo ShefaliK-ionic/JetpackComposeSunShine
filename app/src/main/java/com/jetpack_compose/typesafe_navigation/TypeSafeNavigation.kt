@@ -5,17 +5,23 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.window.isPopupLayout
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navigation
 import androidx.navigation.toRoute
+import com.jetpack_compose.typesafe_navigation.with_parameters.CustomNavType
 import com.jetpack_compose.typesafe_navigation.with_parameters.DestRouteWithParam
+import com.jetpack_compose.typesafe_navigation.with_parameters.Dummy
 import com.jetpack_compose.typesafe_navigation.with_parameters.ScreenC_UI
 import com.jetpack_compose.typesafe_navigation.with_parameters.ScreenD_UI
+import com.jetpack_compose.typesafe_navigation.with_parameters.ScreenE_UI
 import com.jetpack_compose.typesafe_navigation.without_parameters.DestRoutes
 import com.jetpack_compose.typesafe_navigation.without_parameters.ScreenA_UI
 import com.jetpack_compose.typesafe_navigation.without_parameters.ScreenB_UI
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
+import kotlin.reflect.typeOf
 
 @Composable
 fun typeSafeNavigateWithoutParameters(modifier: Modifier = Modifier) {
@@ -74,13 +80,34 @@ fun typeSafeNavigateWithParameters(modifier: Modifier = Modifier) {
 
 
                 composable<DestRouteWithParam.ScreenD_UI> {
-                      val age=it.toRoute<DestRouteWithParam.ScreenD_UI>().age
+                      val age=it.toRoute<DestRouteWithParam.ScreenD_UI>().age?:0//for optional
                       val name=it.toRoute<DestRouteWithParam.ScreenD_UI>().name
                     ScreenD_UI(age=age, name = name) {
                         Log.d("222", "typeSafeNavigate: ScreeD")
+//with data
+                        navController.navigate(DestRouteWithParam.ScreenE_UI(Dummy(age = 20, name = "Advick")))
+                      //with null
+//                        navController.navigate(DestRouteWithParam.ScreenE_UI(null))
+                    }
+                }
 
+
+                composable<DestRouteWithParam.ScreenE_UI>(
+                    typeMap = mapOf(typeOf<Dummy>() to CustomNavType<Dummy>(Dummy::class.java ,Dummy.serializer()),
+                        typeOf<Dummy?>() to CustomNavType<Dummy>(Dummy::class.java,Dummy.serializer())
+
+
+                    )
+
+
+                    ){
+                    val dummy=it.toRoute<DestRouteWithParam.ScreenE_UI>().dummy
+
+
+                    ScreenE_UI(dummy=dummy) {
                         navController.popBackStack()
                     }
+
                 }
 
             }

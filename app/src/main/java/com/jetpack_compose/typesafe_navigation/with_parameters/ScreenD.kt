@@ -26,7 +26,7 @@ fun ScreenD_UI(modifier: Modifier = Modifier,age: Int, name:String,onclick:()-> 
             Column {
                Text("age ->$age name->$name")
                 Spacer(Modifier.height(12.dp))
-                Text(text = "Back to C")
+                Text(text = "Go to Custom")
             }
 
         }
