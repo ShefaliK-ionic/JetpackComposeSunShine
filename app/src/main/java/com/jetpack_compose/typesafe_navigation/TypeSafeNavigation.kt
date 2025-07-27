@@ -5,12 +5,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.window.isPopupLayout
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navigation
+import androidx.navigation.navArgument
 import androidx.navigation.toRoute
+import com.jetpack_compose.typesafe_navigation.with_nav_arg_parameters.DetailScreen
+import com.jetpack_compose.typesafe_navigation.with_nav_arg_parameters.HomeScreen
 import com.jetpack_compose.typesafe_navigation.with_parameters.CustomNavType
 import com.jetpack_compose.typesafe_navigation.with_parameters.DestRouteWithParam
 import com.jetpack_compose.typesafe_navigation.with_parameters.Dummy
@@ -79,6 +81,7 @@ fun typeSafeNavigateWithParameters(modifier: Modifier = Modifier) {
                 }
 
 
+
                 composable<DestRouteWithParam.ScreenD_UI> {
                       val age=it.toRoute<DestRouteWithParam.ScreenD_UI>().age?:0//for optional
                       val name=it.toRoute<DestRouteWithParam.ScreenD_UI>().name
@@ -118,3 +121,29 @@ fun typeSafeNavigateWithParameters(modifier: Modifier = Modifier) {
 
     }
 }
+
+
+
+@Composable
+fun SafeNavigationWithArgs() {
+    val navController=rememberNavController()
+
+    NavHost(navController = navController, startDestination = "home") {
+        composable("home") {
+            HomeScreen(navController)
+        }
+
+        composable(
+            route = "detail/{userId}",
+            arguments = listOf(
+                navArgument("userId") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+            val userId = backStackEntry.arguments?.getInt("userId")
+            DetailScreen(userId = userId)
+        }
+    }
+}
+
+
+

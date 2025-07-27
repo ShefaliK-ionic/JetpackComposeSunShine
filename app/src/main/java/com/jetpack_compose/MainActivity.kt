@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.jetpack_compose.screens.WelcomeScreen
+import com.jetpack_compose.typesafe_navigation.SafeNavigationWithArgs
 import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithParameters
 import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithoutParameters
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
 //NavDrawer()
 //                typeSafeNavigateWithoutParameters()
-                typeSafeNavigateWithParameters()
+//                typeSafeNavigateWithParameters()
+                SafeNavigationWithArgs()
 //                BottomNav()
 
 //                    ColumnFun("Test")
