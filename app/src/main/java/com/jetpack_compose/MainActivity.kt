@@ -5,16 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.jetpack_compose.delegation.CreateToastImpl
+import com.jetpack_compose.delegation.toast
 import com.jetpack_compose.screens.WelcomeScreen
 import com.jetpack_compose.typesafe_navigation.SafeNavigationWithArgs
 import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithParameters
 import com.jetpack_compose.typesafe_navigation.typeSafeNavigateWithoutParameters
 import com.jetpack_compose.ui.theme.JetpackComposeSunshineTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(), toast by CreateToastImpl(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
+        showToast(this@MainActivity,"Compose jetpack")
         setContent {
             JetpackComposeSunshineTheme {
                 // A surface container using the 'background' color from the theme
