@@ -4,6 +4,9 @@ import android.util.Log
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -29,13 +32,12 @@ import kotlin.reflect.typeOf
 fun typeSafeNavigateWithoutParameters(modifier: Modifier = Modifier) {
 
     JetpackComposeSunshineTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) {
-            innerPadding->
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //            modifier= Modifier.padding(innerPadding)
-          val navController= rememberNavController()
-            NavHost(navController= navController, startDestination = DestRoutes.ScreenA){
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = DestRoutes.ScreenA) {
 
-                composable <DestRoutes.ScreenA>{
+                composable<DestRoutes.ScreenA> {
                     ScreenA_UI {
                         Log.d("222", "typeSafeNavigate: ScreeA")
                         navController.navigate(DestRoutes.ScreenB)
@@ -55,7 +57,6 @@ fun typeSafeNavigateWithoutParameters(modifier: Modifier = Modifier) {
             }
 
         }
-
 
 
     }

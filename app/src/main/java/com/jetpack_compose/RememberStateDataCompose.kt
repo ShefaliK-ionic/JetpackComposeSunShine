@@ -3,8 +3,11 @@ package com.jetpack_compose
 import android.util.Log
 import android.widget.TextView
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 
@@ -17,6 +20,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun rememberState(modifier: Modifier = Modifier) {
@@ -32,6 +37,20 @@ fun rememberState(modifier: Modifier = Modifier) {
             Log.d("222", "rememberState: count"+count)
             count++
         }) { Text("Increment") }
+
+
+    }
+
+}
+
+
+@Composable
+fun login(){
+    var editName by remember  { mutableStateOf("Name")}
+    var editPassword by remember  { mutableStateOf("Pass")}
+
+    Column(modifier = Modifier.padding(8.dp)){
+//        TextField(value = editName, onValueChange = { editName= it }, label = {Text(text = "Enter Name")}, keyboardActions = KeyboardOptions(keyboardType = KeyboardType.Text) )
 
 
     }
