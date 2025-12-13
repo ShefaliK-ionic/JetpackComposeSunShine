@@ -29,74 +29,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
-
-            var num1 by remember {
-                mutableStateOf("0")
-            }
-
-            var num2 by remember {
-                mutableStateOf("0")
-            }
-
-            Column {
-
-
-                TextField(
-                    placeholder = {Text(text = "Enter first Num")},
-                    value = num1,
-                    onValueChange = { num1=it },
-                    label = {Text(text = "Enter First Number")},
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                )
-
-                TextField(
-                    placeholder = {Text(text = "Enter second Num")},
-                    value = num2,
-                    onValueChange = {num2= it },
-                    label = { Text("Enter Second Number")},
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-
-                )
-
-                Row {
-                    Button(onClick = {
-                        var result = num1.toInt() + num2.toInt()
-                        Toast.makeText(this@MainActivity, "Add " + result, Toast.LENGTH_SHORT)
-                            .show()
-                    }) { Text(text = "Add") }
-
-                    Button(onClick = {
-                        var sub = num2.toInt() - num1.toInt()
-                        Toast.makeText(this@MainActivity, "Subtract " + sub, Toast.LENGTH_SHORT)
-                            .show()
-
-                    }) {
-                        Text(text = "Sub")
-
-                    }
-
-                    Button(onClick = {
-                        var multiplic = num1.toInt() * num2.toInt()
-                        Toast.makeText(
-                            this@MainActivity,
-                            "Multiply  " + multiplic,
-                            Toast.LENGTH_SHORT
-                        ).show()
-
-                    }) { Text(text = "Multiply") }
-                }
-
-
-            }
-
-
-
+            LoginScreen()
 
 //            basicDemo()
+//            calcApp()
 
         }
     }
+
 
     @Composable
     private fun basicDemo() {
