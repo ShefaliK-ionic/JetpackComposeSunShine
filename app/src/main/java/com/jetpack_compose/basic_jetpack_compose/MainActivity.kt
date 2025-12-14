@@ -4,33 +4,27 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.jetpack_compose.R
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.jetpack_compose.basic_jetpack_compose.navigation.Navigation
+import com.jetpack_compose.basic_jetpack_compose.navigation.Routes
+import com.jetpack_compose.basic_jetpack_compose.navigation.ScreenA
+import com.jetpack_compose.basic_jetpack_compose.navigation.ScreenB
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            LoginScreen()
+            //navigation
+            Navigation()
 
+
+//            LoginScreen()
 //            basicDemo()
 //            calcApp()
 
