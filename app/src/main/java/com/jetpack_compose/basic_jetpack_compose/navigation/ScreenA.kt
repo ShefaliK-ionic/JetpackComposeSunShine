@@ -9,8 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.ActivityNavigator
 import androidx.navigation.NavHostController
 import com.jetpack_compose.basic_jetpack_compose.calcApp
+import com.jetpack_compose.basic_jetpack_compose.type_safe_navigation.Home
 
 //@Preview
 @Composable
@@ -28,6 +30,10 @@ fun ScreenA(navHostController: NavHostController) {
         Button({
             navHostController.navigate(Routes.screenCalculator)
         }) {Text(text = "Calculator") }
+
+        Button({
+            navHostController.navigate(Home)
+        }) {Text(text = "Type safe navigation") }
 
         Button({
             navHostController.navigate(Routes.screenB+"/John")
